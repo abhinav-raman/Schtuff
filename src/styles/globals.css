@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+:root {
+	--light-yellow: #fde68a;
+	--dark: #1c1917;
+	--light-green: #bbf7d0;
+	--light-blue: #bae6fd;
+	--light-pink: #ffc3a0;
+	--primary-text-color: #1c1917;
+	--secondary-text-color: #fff;
+	--primary-bg-color: transparent;
+	--secondary-bg-color: #1c1917;
+}
+
+html,
+body,
+#__next {
+	min-height: 100vh;
+	min-width: 100vw;
+	@apply antialiased;
+}
+
+html > .light-yellow {
+	@apply bg-light-yellow/60 text-stone-800;
+	--secondary-text-color: var(--light-yellow);
+	--secondary-bg-color: var(--dark);
+	--primary-bg-color: var(--light-yellow);
+}
+
+html > .light-green {
+	@apply bg-light-green/60 text-stone-800;
+	--secondary-text-color: var(--light-green);
+	--secondary-bg-color: var(--dark);
+	--primary-bg-color: var(--light-green);
+}
+
+html > .light-blue {
+	@apply bg-light-blue/60 text-stone-800;
+	--secondary-text-color: var(--light-blue);
+	--secondary-bg-color: var(--dark);
+	--primary-bg-color: var(--light-blue);
+}
+
+html > .light-pink {
+	@apply bg-light-pink/60 text-stone-800;
+	--secondary-text-color: var(--light-pink);
+	--secondary-bg-color: var(--dark);
+	--primary-bg-color: var(--light-pink);
+}
+
+html > .dark {
+	@apply bg-stone-900;
+	/* --temp-bg: var(--primary-bg-color);
+	--primary-bg-color: var(--secondary-bg-color);
+	--secondary-bg-color: var(--temp-bg); */
+}
+
+select {
+	/* for Firefox */
+	-moz-appearance: none;
+	/* for Safari, Chrome, Opera */
+	-webkit-appearance: none;
+}
+
+/* for IE10 */
+select::-ms-expand {
+	display: none;
+}
+
+::-webkit-scrollbar {
+	width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+	@apply bg-stone-800/20;
+}
+
+.ql-container {
+	height: calc(100% - 2.5rem) !important;
+}
+
+.ql-container,
+.ql-editor {
+	border: none !important;
+	border-radius: 0.5rem;
+	background-color: var(--primary-bg-color);
+	background: rgba(100, 100, 100, 0.1);
+}
+
+.ql-toolbar {
+	border: none !important;
+}
+
+[role="tooltip"].popup-content {
+	width: fit-content;
+}
+
+.popup-content {
+	@apply border-0 bg-stone-800 text-white !important;
+}
+
+.popup-arrow {
+	@apply border-0 text-stone-800 !important;
+	stroke: none !important;
+}
+
+input,
+textarea,
+button,
+select,
+a {
+	-webkit-tap-highlight-color: transparent;
+}
+
+@media only screen and (max-width: 639px) {
+	.sidebar-container {
+		height: calc(100vh - 44.8px);
+	}
+
+	.sidebar-container {
+		scrollbar-width: thin;
+	}
+
+	.sidebar-container::-webkit-scrollbar {
+		width: 6px;
+	}
+}

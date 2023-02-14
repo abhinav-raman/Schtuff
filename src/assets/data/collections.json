@@ -1,0 +1,26 @@
+[
+	{
+		"collection_id": 0,
+		"collection_title": "Ideas",
+		"description": "folder to keep all mt ideas intact",
+		"created_at": "2019-10-10T12:00:00.000Z"
+	},
+	{
+		"collection_id": 1,
+		"collection_title": "Grocery",
+		"description": "grocery list items",
+		"created_at": "2019-10-10T12:00:00.000Z"
+	},
+	{
+		"collection_id": 2,
+		"collection_title": "Projects",
+		"description": "folder to keep all mt ideas intact",
+		"created_at": "2019-10-10T12:00:00.000Z"
+	},
+	{
+		"collection_id": 3,
+		"collection_title": "Safe",
+		"description": "Mandatory folder with encrypted data",
+		"created_at": "2019-10-10T12:00:00.000Z"
+	}
+]
