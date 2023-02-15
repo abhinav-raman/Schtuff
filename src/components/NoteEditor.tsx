@@ -65,11 +65,11 @@ const NoteEditor = ({
 						editorText = editorText.slice(0, idx) + editorText.slice(idx + 1);
 					}
 
-					const data = CryptoCore.enc.Utf8.parse(editorText);
-					const decryptedData = CryptoCore.enc.Utf8.stringify(data);
-					console.log(data.toString(), decryptedData);
+					// const data = CryptoCore.enc.Utf8.parse(editorText);
+					// const decryptedData = CryptoCore.enc.Utf8.stringify(data);
+					// console.log(data.toString(), decryptedData);
 
-					// noteChangeHandler(editorText, editor.getHTML());
+					noteChangeHandler(editorText, editor.getHTML());
 				}}
 			/>
 		</div>
