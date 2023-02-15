@@ -24,6 +24,12 @@ export const getServerSideProps = async (
 	context: GetServerSidePropsContext
 ) => {
 	const { req, res } = context;
+
+	res.setHeader(
+		"Cache-Control",
+		"public, s-maxage=10, stale-while-revalidate=59"
+	);
+
 	const user = await unstable_getServerSession(req, res, authOptions);
 
 	if (!user || !user.user || !user.user.email) {
