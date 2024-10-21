@@ -5,32 +5,36 @@ import { SessionProvider } from "next-auth/react";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { DarkThemeContextProvider } from "../context/DarkThemeContext";
 import { SidebarContextProvider } from "../context/SidebarContent";
+import { ThemeProvider } from "@/components/theme-provider";
 
 function MyApp({
-	Component,
-	pageProps,
+    Component,
+    pageProps,
 }: AppProps<{ dehydratedState: unknown }>) {
-	const queryClient = new QueryClient({
-		defaultOptions: {
-			queries: {
-				refetchOnWindowFocus: false,
-			},
-		},
-	});
+    const queryClient = new QueryClient({
+        defaultOptions: {
+            queries: {
+                refetchOnWindowFocus: false,
+            },
+        },
+    });
 
-	return (
-		<QueryClientProvider client={queryClient}>
-			<SessionProvider>
-				<DarkThemeContextProvider>
-					<ThemeContextProvider>
-						<SidebarContextProvider>
-							<Component {...pageProps} />
-						</SidebarContextProvider>
-					</ThemeContextProvider>
-				</DarkThemeContextProvider>
-			</SessionProvider>
-		</QueryClientProvider>
-	);
+    return (
+        <QueryClientProvider client={queryClient}>
+            <SessionProvider>
+                <ThemeProvider
+                    attribute="class"
+                    defaultTheme="system"
+                    enableSystem
+                    disableTransitionOnChange
+                >
+                    <SidebarContextProvider>
+                        <Component {...pageProps} />
+                    </SidebarContextProvider>
+                </ThemeProvider>
+            </SessionProvider>
+        </QueryClientProvider>
+    );
 }
 
 export default MyApp;

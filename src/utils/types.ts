@@ -14,6 +14,7 @@ export type CollectionType = {
 };
 
 export type SidebarType = {
+	titleText: string;
 	onEnter: (value: string) => void;
 	children: React.ReactNode;
 	isEnterSuccess: boolean;
