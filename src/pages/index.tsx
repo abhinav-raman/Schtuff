@@ -19,6 +19,8 @@ import { authOptions } from "./api/auth/[...nextauth]";
 import { BASE_PATH } from "../utils/constants";
 import { SidebarContext } from "../context/SidebarContent";
 import MobileMenu from "../components/MobileMenu";
+import GoogleLoginBtn from "@/components/GoogleLoginBtn";
+import { ModeToggle } from "@/components/ui/ModeToggle";
 
 export const getServerSideProps = async (
     context: GetServerSidePropsContext
@@ -167,7 +169,7 @@ const Home = ({
                             )}
                         </div>
 
-                        <section className="flex w-2/3 h-full flex-col gap-y-4 py-4 pr-4">
+                        <section className="flex h-full w-2/3 flex-col gap-y-4 py-4 pr-4">
                             <Header
                                 user={user}
                                 onMenuBtnClick={() =>
@@ -197,7 +199,12 @@ const Home = ({
                         </section>
                     </>
                 ) : (
-                    <UserLogin />
+                    <>
+                        <div className="absolute right-4 top-4">
+                            <ModeToggle />
+                        </div>
+                        <UserLogin />
+                    </>
                 )}
             </main>
         </>

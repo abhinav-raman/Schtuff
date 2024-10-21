@@ -93,7 +93,7 @@ const Header = ({
             <h1 className="text-center text-4xl font-extrabold dark:text-[var(--secondary-text-color)] sm:text-3xl">
                 Schtuff
             </h1>
-            <div className="absolute right-16 flex items-center sm:hidden">
+            <div className="absolute right-14 flex items-center sm:hidden">
                 <ModeToggle />
             </div>
             <div className="absolute right-2 h-9 w-9 sm:hidden">

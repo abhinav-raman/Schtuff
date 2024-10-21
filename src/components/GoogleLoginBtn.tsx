@@ -1,12 +1,8 @@
 import { signIn, signOut } from "next-auth/react";
 import dynamic from "next/dynamic";
-const Popup = dynamic(() => import("reactjs-popup"), { ssr: false });
 const Image = dynamic(() => import("next/image"));
-
 import googleLogo from "../assets/images/google-icon-logo.svg";
 import { User } from "../utils/types";
-import "reactjs-popup/dist/index.css";
-import { Button } from "./ui/button";
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -28,7 +24,7 @@ const GoogleLoginBtn = ({ user }: { user: User | null }) => {
                         alt={user.name || ""}
                         height={36}
                         width={36}
-                        className="rounded-full"
+                        className="rounded-lg"
                     />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent
