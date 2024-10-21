@@ -52,15 +52,9 @@ const ListItem = ({
                     <DropdownMenuContent align="start" side="right">
                         <DropdownMenuItem
                             onClick={onDeleteClickHandler}
-                            className="p-0"
                         >
-                            <Button
-                                variant="ghost"
-                                className="flex w-full justify-start gap-x-1 px-2 font-semibold text-destructive hover:bg-destructive/10 hover:text-destructive"
-                            >
-                                <TrashIcon />
-                                Delete
-                            </Button>
+                            <TrashIcon />
+                            Delete
                         </DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>

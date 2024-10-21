@@ -4,12 +4,12 @@ import { Input } from "./ui/input";
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
 import { twMerge } from "tailwind-merge";
-import { ChevronRightIcon } from "@radix-ui/react-icons";
+import { ChevronRightIcon, ReloadIcon } from "@radix-ui/react-icons";
 
 const Sidebar = ({
     titleText,
     isEnterSuccess,
-
+    isLoading,
     onEnter,
     children,
 }: SidebarType) => {
@@ -51,9 +51,9 @@ const Sidebar = ({
                     <Button
                         className="w-10 rounded-lg"
                         size={"icon"}
-                        disabled={!inputValue}
+                        disabled={!inputValue || isLoading}
                     >
-                        <ChevronRightIcon />
+                        {isLoading ? <ReloadIcon className="animate-spin" /> : <ChevronRightIcon />}
                     </Button>
                 </div>
             </div>

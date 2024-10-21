@@ -1,9 +1,13 @@
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import {
+    useIsFetching,
+    useIsMutating,
+    useMutation,
+    useQueryClient,
+} from "@tanstack/react-query";
 import { NoteType } from "../utils/types";
 import ListItem from "./ListItem";
 import Sidebar from "./Sidebar";
 import axios from "axios";
-
 
 const NotesList = ({
     notesList,
@@ -17,6 +21,8 @@ const NotesList = ({
     setActiveNoteId: (e: number | null) => void;
 }) => {
     const queryClient = useQueryClient();
+    const isFetching = useIsFetching();
+    const isMutationsFetching = useIsMutating();
     const deleteNoteMutation = useMutation({
         mutationFn: deleteNoteHandler,
         onSuccess: function (e) {
@@ -70,6 +76,7 @@ const NotesList = ({
     return (
         <Sidebar
             titleText="Notes"
+            isLoading={!!isFetching || !!isMutationsFetching}
             onEnter={onSidebarEnter}
             isEnterSuccess={createNoteMutation.isSuccess}
         >

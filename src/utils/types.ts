@@ -18,6 +18,7 @@ export type SidebarType = {
 	onEnter: (value: string) => void;
 	children: React.ReactNode;
 	isEnterSuccess: boolean;
+	isLoading: boolean;
 };
 
 export type User = {

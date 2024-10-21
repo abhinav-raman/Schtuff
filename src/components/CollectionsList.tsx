@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useIsFetching, useIsMutating, useMutation, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
 
 const Sidebar = dynamic(() => import("./Sidebar"));
@@ -18,6 +18,8 @@ const CollectionsList = ({
     user: User;
 }) => {
     const queryClient = useQueryClient();
+    const isFetching = useIsFetching();
+    const isMutationsFetching = useIsMutating();
     const createCollectionMutation = useMutation({
         mutationFn: createNewCollectionHandler,
         onSuccess: function (e) {
@@ -66,6 +68,7 @@ const CollectionsList = ({
     return (
         <Sidebar
             titleText="Folders"
+            isLoading={!!isFetching || !!isMutationsFetching}
             onEnter={onSidebarEnter}
             isEnterSuccess={createCollectionMutation.isSuccess}
         >
