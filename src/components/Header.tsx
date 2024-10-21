@@ -1,6 +1,5 @@
 import { User } from "../utils/types";
 import GoogleLoginBtn from "./GoogleLoginBtn";
-import ThemeSwitcher from "./ThemeSwitcher";
 
 import { useContext } from "react";
 import { SidebarContext } from "../context/SidebarContent";

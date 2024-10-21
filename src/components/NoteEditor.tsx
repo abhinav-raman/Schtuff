@@ -52,7 +52,7 @@ const NoteEditor = ({
     }, [activeNote]);
 
     return (
-        <Card className="p-4 h-full">
+        <Card className="p-2 h-full">
             <ReactQuill
                 key={activeNote.created_at}
                 className="h-full w-full resize-none outline-none dark:text-[var(--secondary-text-color)]"

@@ -16,6 +16,7 @@ import {
     DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 import { DropdownMenuLabel } from "@radix-ui/react-dropdown-menu";
+import { ExitIcon } from "@radix-ui/react-icons";
 
 const GoogleLoginBtn = ({ user }: { user: User | null }) => {
     if (user) {
@@ -41,10 +42,11 @@ const GoogleLoginBtn = ({ user }: { user: User | null }) => {
                     <DropdownMenuSeparator />
                     <DropdownMenuGroup>
                         <DropdownMenuItem
-                            className="w-full cursor-pointer align-baseline"
+                            className="flex w-full cursor-pointer justify-between align-baseline"
                             onClick={() => signOut()}
                         >
                             Logout
+                            <ExitIcon />
                         </DropdownMenuItem>
                     </DropdownMenuGroup>
                 </DropdownMenuContent>

@@ -1,5 +1,4 @@
 import { twMerge } from "tailwind-merge";
-import { Button } from "./ui/button";
 import { useState } from "react";
 import {
     DropdownMenu,
@@ -8,6 +7,7 @@ import {
     DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 import { DotsVerticalIcon, TrashIcon } from "@radix-ui/react-icons";
+import { Button } from "./ui/button";
 
 const ListItem = ({
     itemId,
@@ -52,10 +52,15 @@ const ListItem = ({
                     <DropdownMenuContent align="start" side="right">
                         <DropdownMenuItem
                             onClick={onDeleteClickHandler}
-                            className="flex justify-between text-base font-semibold text-destructive hover:text-destructive"
+                            className="p-0"
                         >
-                            Delete
-                            <TrashIcon className="text-destructive" />
+                            <Button
+                                variant="ghost"
+                                className="flex w-full justify-start gap-x-1 px-2 font-semibold text-destructive hover:bg-destructive/10 hover:text-destructive"
+                            >
+                                <TrashIcon />
+                                Delete
+                            </Button>
                         </DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>
