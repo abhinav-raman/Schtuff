@@ -5,6 +5,9 @@ import { useContext } from "react";
 import { SidebarContext } from "../context/SidebarContent";
 import { ModeToggle } from "./ui/ModeToggle";
 import { Button } from "./ui/button";
+import { BsThreeDotsVertical } from "react-icons/bs";
+import { DotsVerticalIcon } from "@radix-ui/react-icons";
+import ColorPicker from "./ColorPicker";
 
 const Header = ({
     user,
@@ -93,10 +96,9 @@ const Header = ({
             <h1 className="text-center text-4xl font-extrabold dark:text-[var(--secondary-text-color)] sm:text-3xl">
                 Schtuff
             </h1>
-            <div className="absolute right-14 flex items-center sm:hidden">
+            <div className="absolute right-2 flex gap-x-2">
+                <ColorPicker />
                 <ModeToggle />
-            </div>
-            <div className="absolute right-2 h-9 w-9 sm:hidden">
                 <GoogleLoginBtn user={user} />
             </div>
         </header>
